@@ -76,7 +76,8 @@ var webpackconfig = {
         root: './',
         alias: {
             'actions': path.join(__dirname, 'src/vuex/actions.js'),
-            'getters': path.join(__dirname, 'src/vuex/getters.js')
+            'getters': path.join(__dirname, 'src/vuex/getters.js'),
+            'vue': path.join(__dirname, './node_modules/vue/dist/vue.min.js')
         }
 
     },

@@ -53,6 +53,10 @@ gulp.task('start', ['webpack'], function(){
     gulp.watch(['app/views/**/*.*'], connect.restart);
 });
 
+gulp.task('watch', ['webpack'], function(){
+    gulp.watch('src/**/*.*', ['webpack']);
+});
+
 gulp.task('webpack', function(done){
     var 
         iWebpackConfig = util.extend({}, webpackConfig);
