@@ -11,9 +11,14 @@ export default Vue.extend({
         getters,
         actions
     },
-    datas(){
+    data(){
         return {
-            rotate: 0
+            year: 2017,
+            month: 1,
+            date: 23,
+            week: 1,
+            yiList: [],
+            byList: []
         };
     }
 });

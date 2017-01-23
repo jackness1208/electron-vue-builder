@@ -10,11 +10,11 @@ Vue.use(VueRouter);
 const router = new VueRouter({
  routes: [
      {
-         path: '/index', 
-         component: {template: '<div>111</div>'}
+         path: '/index',
+         component: pageHome
      }, {
-         path: '*', 
-         component: {template: '<div>111</div>'}
+         path: '*',
+         component: pageHome
 
      }
  ]
