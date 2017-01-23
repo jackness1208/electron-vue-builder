@@ -38,7 +38,7 @@ var webpackconfig = {
         // ),
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             exclude: '/node_modules/',
             loader: 'babel-loader',
@@ -48,19 +48,19 @@ var webpackconfig = {
 
         }, {
             test: /\.vue$/,
-            loaders: ['vue']
+            loader: 'vue-loader'
         }, {
             test: /\.html$/,
-            loaders: ['html-loader']
+            loader: 'html-loader'
         }, {
             test: /\.scss$/,
-            loaders: ["style-loader", "css-loader","sass-loader"]
+            loader: "style-loader!css-loader!sass-loader"
         }, {
             test: /\.jade$/,
-            loaders: ['pug']
+            loader: 'pug-loader'
         }, {
             test: /\.(png|jpg|gif)$/,
-            loader: 'url'
+            loader: 'url-loader'
         }, {
             // shiming the module
             test: path.join(__dirname, 'src/js/lib/'),
@@ -68,16 +68,20 @@ var webpackconfig = {
         }]
 
     },
-    resolveLoader: { 
-        fallback: path.join( __dirname, "node_modules") 
-    },
+    // resolveLoader: { 
+    //     fallback: path.join( __dirname, "node_modules") 
+    // },
     resolve: {
-        fallback: path.join( __dirname, "node_modules"),
-        root: './',
+        // fallback: path.join( __dirname, "node_modules"),
+        modules: [
+            __dirname,
+            'node_modules'
+        ],
         alias: {
             'actions': path.join(__dirname, 'src/vuex/actions.js'),
             'getters': path.join(__dirname, 'src/vuex/getters.js'),
-            'vue': path.join(__dirname, './node_modules/vue/dist/vue.min.js')
+            'vue$': 'vue/dist/vue.common.js'
+            // 'vue': path.join(__dirname, './node_modules/vue/dist/vue.min.js')
         }
 
     },

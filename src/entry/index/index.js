@@ -11,10 +11,10 @@ const router = new VueRouter({
  routes: [
      {
          path: '/index', 
-         component: pageHome
+         component: {template: '<div>111</div>'}
      }, {
          path: '*', 
-         component: pageHome
+         component: {template: '<div>111</div>'}
 
      }
  ]
