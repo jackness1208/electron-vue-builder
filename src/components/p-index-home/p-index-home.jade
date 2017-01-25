@@ -1,16 +1,17 @@
-div.lhl-title 程序员老黄历
-div.lhl-subtl 今天是 {{year}} 年 {{month}} 月 {{date}} 日 星期 {{week}}
+div.lhl-index-home
+    div.lhl-title 程序员老黄历
+    div.lhl-subtl 今天是 {{year}} 年 {{month}} 月 {{date}} 日 星期 {{week}}
 
-dl.lhl-feel.lhl-feel-yi
-    dt 宜
-    dd
-        div.box(v-for="item in yiList")
-            div.name {{item.name}}
-            div.info {{item.info}}
+    dl.lhl-feel.lhl-feel-yi
+        dt 宜
+        dd
+            div.box(v-for="item in yiList")
+                div.name {{item.name}}
+                div.info {{item.info}}
 
-dl.lhl-feel.lhl-feel-by
-    dt 不宜
-    dd
-        div.box(v-for="item in byList")
-            div.name {{item.name}}
-            div.info {{item.info}}
+    dl.lhl-feel.lhl-feel-by
+        dt 不宜
+        dd
+            div.box(v-for="item in byList")
+                div.name {{item.name}}
+                div.info {{item.info}}

@@ -13,6 +13,7 @@ export default Vue.extend({
     },
     data(){
         return {
+            message:'ssb',
             year: 2017,
             month: 1,
             date: 23,

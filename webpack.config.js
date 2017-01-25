@@ -38,7 +38,7 @@ var webpackconfig = {
         // ),
     },
     module: {
-        rules: [{
+        loaders: [{
             test: /\.js$/,
             exclude: '/node_modules/',
             loader: 'babel-loader',
@@ -68,20 +68,17 @@ var webpackconfig = {
         }]
 
     },
-    // resolveLoader: { 
-    //     fallback: path.join( __dirname, "node_modules") 
-    // },
+    resolveLoader: { 
+        fallback: path.join( __dirname, "node_modules") 
+    },
     resolve: {
-        // fallback: path.join( __dirname, "node_modules"),
-        modules: [
-            __dirname,
-            'node_modules'
-        ],
+        root: './',
+        fallback: path.join( __dirname, "node_modules"),
         alias: {
             'actions': path.join(__dirname, 'src/vuex/actions.js'),
             'getters': path.join(__dirname, 'src/vuex/getters.js'),
             'vue$': 'vue/dist/vue.common.js'
-            // 'vue': path.join(__dirname, './node_modules/vue/dist/vue.min.js')
+            // 'vue': path.join(__dirname, './node_modules/vue/dist/vue.js')
         }
 
     },
