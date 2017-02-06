@@ -1,6 +1,7 @@
 'use strict';
 var 
     gulp = require('gulp'),
+    gulpConnect = require('gulp-connect'),
     connect = require('electron-connect').server.create(),
     // symdest = require('gulp-symdest'),
     // zip = require('gulp-vinyl-zip'),
@@ -9,7 +10,7 @@ var
 
     // clean = require('gulp-clean'),
     webpack = require('webpack'),
-    // runSequence = require('run-sequence'),
+    runSequence = require('run-sequence'),
     // fs = require('fs'),
     path = require('path'),
     util = require('yyl-util'),
@@ -55,6 +56,23 @@ gulp.task('start', ['webpack'], function(){
 
 gulp.task('watch', ['webpack'], function(){
     gulp.watch('src/**/*.*', ['webpack']);
+});
+
+gulp.task('watch:web', ['webpack'], function(){
+    gulp.watch('src/**/*.*', function(){
+        runSequence('webpack', 'connect-reload');
+    });
+
+    gulpConnect.server({
+        root: './app/views',
+        port: 5000,
+        livereload: true
+    });
+});
+
+gulp.task('connect-reload', function(){
+    return gulp.src('./package.json')
+        .pipe(gulpConnect.reload());
 });
 
 gulp.task('webpack', function(done){

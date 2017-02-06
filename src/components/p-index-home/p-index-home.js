@@ -1,25 +1,30 @@
 'use strict';
 import Vue from 'vue';
-import getters from 'getters';
-import actions from 'actions';
 import tpl from './p-index-home.jade';
 import './p-index-home.scss';
 
 export default Vue.extend({
     template: tpl(),
-    vuex: {
-        getters,
-        actions
-    },
     data(){
         return {
-            message:'ssb',
-            year: 2017,
-            month: 1,
-            date: 23,
-            week: 1,
-            yiList: [],
-            byList: []
+            // 日期
+            year: '',
+            month: '-',
+            date: '-',
+            week: '-',
+            // 女神亲近指数
+            girlStar: 0,
+            // 饮品
+            drinks: [],
+            //
+            direction: '',
+            yiList: [{name: '骂你', info: '就是骂你'}],
+            byList: [{name: '骂你', info: '就是骂你'}]
         };
+    },
+    mounted(){
+        console.log(this.$store.getters)
+        console.log(this.$store.getters.data)
+
     }
 });
