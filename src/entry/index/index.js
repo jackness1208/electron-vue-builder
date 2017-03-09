@@ -1,7 +1,6 @@
 'use strict';
 import './index.scss';
 import Vue from 'vue';
-import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import store from '../../vuex/store.js';
 
