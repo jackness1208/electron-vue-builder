@@ -1,0 +1,31 @@
+{
+  "name": "electron-vue-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/server/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/electron-vue-builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/electron-vue-builder/issues"
+  },
+  "homepage": "https://github.com/jackness1208/electron-vue-builder#readme",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2",
+    "electron-winstaller": "^2.6.3",
+    "yyl-util": "^1.4.0"
+  },
+  "dependencies": {
+    "electron-settings": "^3.1.1",
+    "electron-shortcut-normalizer": "^1.0.0"
+  }
+}
