@@ -5,7 +5,7 @@ const
     util = require('yyl-util'),
     BrowserWindow = electron.BrowserWindow,
     app = electron.app,
-    isDebug = util.envPrase('debug');
+    isDebug = util.envPrase(process.argv).debug;
 
 var mainWindow = null;
 
@@ -18,10 +18,13 @@ function initialize () {
 
     function createWindow () {
         var windowOptions = {
-            width: 1080,
-            minWidth: 680,
-            height: 840,
-            title: app.getName()
+            resizable: false,
+            frame: false,
+            titleBarStyle: 'hidden',
+            title: app.getName(),
+            width: 800,
+            minWidth: 800,
+            height: 600 
         };
 
         if (process.platform === 'linux') {
